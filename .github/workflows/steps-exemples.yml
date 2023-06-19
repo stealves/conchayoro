@@ -3,11 +3,9 @@ name: Node.js
 on:
   push:
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
 
 jobs:
-  build:
+  marketplace:
     runs-on: ubuntu-latest
     strategy:
       matrix:
