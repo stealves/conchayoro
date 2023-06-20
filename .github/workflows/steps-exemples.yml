@@ -7,15 +7,12 @@ on:
 jobs:
   marketplace:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
     steps:
     - uses: actions/checkout@v3
-    - name: configuração do Node.js ${{ matrix.node-version }}
+    - name: configuração do NodeJs
       uses: actions/setup-node@v3
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: 18
     - name: verification of node version
       run: node --version
       
