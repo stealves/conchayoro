@@ -33,7 +33,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
       AWS_EC2_METADATA_DISABLED: true
-      HOMOLOGATION_BUCKET_S3: ${{ secrets.HOMOLOGATION_BUCKET_S3 }}
+      HOMOLOGATION_BUCKET_S3: ${{ vars.HOMOLOGATION_BUCKET_S3 }}
       
     steps:
       - name: Download artifact
@@ -53,7 +53,7 @@ jobs:
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
       AWS_EC2_METADATA_DISABLED: true
-      PRODUCTION_BUCKET_S3: ${{ secrets.PRODUCTION_BUCKET_S3 }}
+      PRODUCTION_BUCKET_S3: ${{ vars.PRODUCTION_BUCKET_S3 }}
       
     steps:
       - name: Download artifact
