@@ -3,11 +3,6 @@ name: conchayoro-pipeline
 on:
   push:
     branches: [ "main" ]
-  workflow_dispatch:
-    inputs:
-      deploy-production:
-        description: 'Deploy em Produção'
-        runs-on: ubuntu-latest
 
 jobs:
   build:
@@ -49,8 +44,7 @@ jobs:
         run: aws s3 cp frontend/.next/server/app s3://$HOMOLOGATION_BUCKET_S3 --recursive --acl public-read
         
   deploy_production:
-    if: github.event.inputs.deploy-production == 'true'
-#     if: "contains(github.event.head_commit.message, '[production]')"
+    if: "contains(github.event.head_commit.message, '[production]')"
     runs-on: ubuntu-latest
     needs: build
     env:
