@@ -22,7 +22,7 @@ jobs:
       - name: upload frontend build
         uses: actions/upload-artifact@v3
         with:
-          name: deploy
+          name: build
           path: frontend/.next/server/app
   
   deploy:
